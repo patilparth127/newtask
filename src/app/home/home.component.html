@@ -1,1 +1,14 @@
-<p>home works!</p>
+<button (click)="toggleSidebar()">☰</button>
+<div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+  <button (click)="toggleSidebar()" class="sidebar-toggle-button">
+    ☰
+  </button>
+  <div class="sidebar-content">
+    <a routerLink="/home" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}" routerLinkActive="active">Home</a>
+    <a routerLink="/location" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}" routerLinkActive="active">Location</a>
+    <a (click)="logout()" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}">Logout</a>
+  </div>
+</div>
+<div class="content" [ngClass]="{'content-shifted': isSidebarOpen}">
+    
+</div>

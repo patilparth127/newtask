@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       const password = this.loginForm.get('password')?.value;
   
       // Check if username and password are valid (e.g., username=admin, password=admin123)
-      if (username === 'admin' && password === 'admin123') {
+      if (username === 'admin' && password === 'admin') {
         // Generate a dummy token (you can use a more secure approach in a real application)
         const dummyToken = 'your_dummy_token_here';
         alert('Sucess')

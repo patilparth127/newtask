@@ -8,14 +8,6 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-  isSidebarOpen = false;
-
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  }
-
-  logout() {
-    // Implement your logout logic here
-  }
+ 
   
 }
