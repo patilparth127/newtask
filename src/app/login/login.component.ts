@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
+   const token = localStorage.getItem('token');
+    if(token != null )this.router.navigate(['/home']);
   }
 
   onSubmit() {

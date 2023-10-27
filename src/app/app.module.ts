@@ -9,19 +9,26 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
+import { CityFilterPipe } from './city-filter.pipe';
+import { LastVisitedUrlService } from './last-visited-url.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    CityFilterPipe,
 
   ],
   imports: [
     BrowserModule,MatSidenavModule,MatListModule,MatToolbarModule,FormsModule,
-    ReactiveFormsModule,AppRoutingModule ,BrowserAnimationsModule,
+    ReactiveFormsModule,AppRoutingModule ,BrowserAnimationsModule,HttpClientModule
+    ,DataTablesModule,
+
   ],
-  providers: [],
+  providers: [LastVisitedUrlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
