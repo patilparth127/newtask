@@ -2,3 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.content.content-shifted {
+    margin-left: 250px; /* Adjust the margin for the open sidebar */
+  }
+  .sidebar a.initial-letter.active {
+  background-color: #555; /* Apply the same active link style as the hover effect */
+}

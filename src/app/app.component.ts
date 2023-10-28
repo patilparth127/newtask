@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,18 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class AppComponent {
-  isSidebarOpen = false;
 
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
+ 
+  constructor(private router: Router) {}
+
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
-  logout() {
-    // Implement your logout logic here
+  navigate(res : any){
+    this.router.navigate(['/'+res]);
+
   }
 }

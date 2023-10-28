@@ -13,13 +13,12 @@ import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { CityFilterPipe } from './city-filter.pipe';
 import { LastVisitedUrlService } from './last-visited-url.service';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
-    CityFilterPipe,
 
   ],
   imports: [

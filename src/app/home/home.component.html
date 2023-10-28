@@ -1,43 +1,45 @@
-<button (click)="toggleSidebar()">☰</button>
+
 <div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
   <button (click)="toggleSidebar()" class="sidebar-toggle-button">
     ☰
   </button>
   <div class="sidebar-content">
-    <a routerLink="/home" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}" routerLinkActive="active">Home</a>
-    <a routerLink="/location" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}" routerLinkActive="active">Location</a>
+    <a (click)="navigate('home')" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}" routerLinkActive="active">Home</a>
+    <a (click)="navigate('location')" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}" routerLinkActive="active">Location</a>
     <a (click)="logout()" class="initial-letter" [ngClass]="{'full-text': isSidebarOpen}">Logout</a>
   </div>
 </div>
 <div class="content" [ngClass]="{'content-shifted': isSidebarOpen}">
-    <input [(ngModel)]="cityFilter" placeholder="Filter by City" />
-    <div class="btn-group">
-        <!-- <button id="excelBtn" class="btn btn-primary">Export to Excel</button>
-        <button id="printBtn" class="btn btn-primary">Print Table</button> -->
-      </div>
-    <table id="datatableexample" class="display">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Username</th>
-            <th>Name</th>
-            <th>City</th>
-            <th>Street</th>
-            <th>Phone</th>
-          </tr>
-        </thead>
-        <tbody >
-            <tr *ngFor="let item of data | cityFilter: cityFilter">
-                <td>{{ item.id }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.username }}</td>
-            <td>{{ item.name.firstname }} {{ item.name.lastname }}</td>
-            <td>{{ item.address.city }}</td>
-            <td>{{ item.address.street }}</td>
-            <td>{{ item.phone }}</td>
-          </tr>
-        </tbody>
-      </table>
+    
       
+
+  <input style="float: right;" [(ngModel)]="cityFilter" placeholder="Filter by City" />
+  <div class="btn-group">
+    <!-- Include your buttons here -->
+  </div>
+  <table id="datatableexample" class="display">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Street</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data | cityFilter: cityFilter">
+        <td>{{ item.id }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.username }}</td>
+        <td>{{ item.name.firstname }} {{ item.name.lastname }}</td>
+        <td>{{ item.address.city }}</td>
+        <td>{{ item.address.street }}</td>
+        <td>{{ item.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
